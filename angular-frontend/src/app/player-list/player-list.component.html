@@ -1,0 +1,25 @@
+<h2> Player List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th> Score Team 1 </th>
+            <th> Score Team 2</th>
+            <th> Report</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let player of players" >
+            <td> {{ player.name }} </td>
+            <td> {{ player.scoreTeam1 }} </td>
+            <td> {{ player.scoreTeam2 }} </td>
+            <td> {{ player.report }} </td>
+            <td>
+                <button (click) = "updatePlayer(player.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deletePlayer(player.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "playerDetails(player.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
